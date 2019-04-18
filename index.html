@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <img id="noIdea" class="show" src="images/no-idea.9d6777e5.png" alt="no-idea">
+        <img id="idea" class="hidden" src="images/idea.2f1162c1.png" alt="idea">
+        <img id="badIdea" class="hidden" src="images/bad-idea.198ddf52.png" alt="bad-idea">
+        <div id="btns">
+            <input type="button" id="btn1" onclick="action('idea')" value="Idea">
+            <input type="button" id="btn2" onclick="action('badIdea')" value="Bad Idea">
+        </div>
+    </div>
+</body>
+<script>
+    var noideaImg = document.getElementById('noIdea');
+    var ideaImg = document.getElementById('idea');
+    var badIdeaImg = document.getElementById('badIdea');
+    var ideaBtn = document.getElementById('btn1');
+    var badIdeaBtn = document.getElementById('btn2');
+    function action(a) {
+        if (noideaImg.className == 'show' && a == 'idea') {
+            noideaImg.className = "hidden";
+            ideaImg.className = "show";
+            ideaBtn.value = "No Idea";
+        } else if (noideaImg.className == 'show' && a == 'badIdea') {
+            noideaImg.className = "hidden";
+            badIdeaImg.className = "show";
+        }
+        else {
+            noideaImg.className = "show";
+            ideaImg.className = "hidden";
+            badIdeaImg.className = "hidden";
+            ideaBtn.value = "Idea";
+        }
+    }
+
+</script>
+
+</html>
